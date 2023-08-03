@@ -1,3 +1,5 @@
-from django.shortcuts import render
+from rest_framework import mixins, viewsets
 
-# Create your views here.
+from apps.doctors.models import Doctor
+from apps.doctors.serializers import DoctorSerializer
+
