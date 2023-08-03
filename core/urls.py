@@ -21,4 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     #Api
     path('doctors/', include('apps.doctors.urls')),
+    path('news/', include('apps.news.urls')),
 ]
