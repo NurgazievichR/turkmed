@@ -42,6 +42,7 @@ DJANGO_APPS = [
 
 THIRD_APPS = [
     'rest_framework',
+    'drf_yasg',
 ]
 
 
