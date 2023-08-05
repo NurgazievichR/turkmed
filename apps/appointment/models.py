@@ -16,8 +16,8 @@ class Appointment(models.Model):
     
     class Meta:
         ordering = ('-id',)
-        verbose_name = 'Встреча'
-        verbose_name_plural = 'Встречи'
+        verbose_name = 'Приём'
+        verbose_name_plural = 'Приемы'
         
 
 
