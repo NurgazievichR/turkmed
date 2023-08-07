@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.hashers import make_password, check_password
 
 class Doctor(models.Model):
     image = models.ImageField('Фото', upload_to='doctor_images/')
@@ -7,6 +8,7 @@ class Doctor(models.Model):
     job = models.CharField('Работа', max_length=265)
     phone_number = models.CharField('Номер телефона', max_length=265)
     description = models.TextField('Описание')
+
 
     def __str__(self):
         return f"{self.full_name}"
@@ -41,5 +43,4 @@ class HospitalAward(models.Model):
         ordering = ('-id',)
         verbose_name = 'Награда больницы'
         verbose_name_plural = 'Награды больницы'
-
 
