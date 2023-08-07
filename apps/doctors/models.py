@@ -2,12 +2,12 @@ from django.db import models
 from django.contrib.auth.hashers import make_password, check_password
 
 class Doctor(models.Model):
-    image = models.ImageField('Фото', upload_to='doctor_images/')
+    image = models.ImageField('Фото', upload_to='doctor_images/', blank=True, null=True)
     full_name = models.CharField('Полное имя', max_length=265)
-    age = models.IntegerField('Возраст')
-    job = models.CharField('Работа', max_length=265)
-    phone_number = models.CharField('Номер телефона', max_length=265)
-    description = models.TextField('Описание')
+    age = models.IntegerField('Возраст', blank=True, null=True)
+    job = models.CharField('Работа', max_length=265, blank=True, null=True)
+    phone_number = models.CharField('Номер телефона', max_length=265, blank=True, null=True)
+    description = models.TextField('Описание', blank=True, null=True)
 
 
     def __str__(self):
