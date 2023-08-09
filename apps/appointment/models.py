@@ -8,11 +8,11 @@ class Appointment(models.Model):
         ('female', 'female'),    
         )
 
+    doctor = models.ForeignKey(Doctor, related_name='doctor_appointment', on_delete=models.CASCADE, verbose_name='Доктор')
     full_name = models.CharField('Полное имя', max_length=265)
     phone_number = models.CharField('Номер телефона', max_length=265)
     sex = models.CharField('Пол', max_length=10, choices=GENDER_CHOICES)
-    time = models.TimeField('Время', auto_now_add=True)
-    doctor = models.ForeignKey(Doctor, related_name='doctor_appointment', on_delete=models.CASCADE, verbose_name='Доктор')
+    time = models.DateTimeField('Время')
 
     def __str__(self):
         return f"{self.full_name}-----{self.time}"
