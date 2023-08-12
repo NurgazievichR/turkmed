@@ -26,7 +26,7 @@ class Appointment(models.Model):
 
 class AppointmentTime(models.Model):
     time = models.DateTimeField('Время')
-    doctor = models.ForeignKey(Doctor, on_delete=models.CASCADE, verbose_name='Доктор')
+    doctor = models.ForeignKey(Doctor, on_delete=models.CASCADE, verbose_name='Доктор', related_name='doctor_appointment_time')
     appointment = models.ForeignKey(Appointment, on_delete=models.PROTECT, verbose_name='Прием', null=True, blank=True)
     isAvailable = models.BooleanField(default=False, verbose_name='Зянато')
 
