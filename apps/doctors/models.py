@@ -33,7 +33,9 @@ class DoctorAward(models.Model):
         ordering = ('-id',)
         verbose_name = 'Награда'
         verbose_name_plural = 'Награды'
-    
+
+
+
 
 class HospitalAward(models.Model):
     title = models.CharField('Название', max_length=265)
