@@ -8,7 +8,7 @@ class DoctorAwardSerializer(serializers.ModelSerializer):
         model = DoctorAward
         fields = ['image']
 
-class AppointmentTime(serializers.ModelSerializer):
+class AppointmentTimeSerializer(serializers.ModelSerializer):
     class Meta:
         model = AppointmentTime
         fields = ['time', 'appointment', 'isAvailable']
@@ -17,7 +17,7 @@ class AppointmentTime(serializers.ModelSerializer):
 
 class DoctorSerializer(serializers.ModelSerializer):
     doctor_awards = DoctorAwardSerializer(many=True, read_only=True)
-    doctor_appointment_time = AppointmentTime(many=True, read_only=True)
+    doctor_appointment_time = AppointmentTimeSerializer(many=True, read_only=True)
     class Meta: 
         model = Doctor
         fields = '__all__'
