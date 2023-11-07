@@ -46,6 +46,12 @@ class HospitalAward(models.Model):
     
     class Meta:
         ordering = ('-id',)
-        verbose_name = 'Награда больницы'
+        verbose_name = 'Награда больницы'    
         verbose_name_plural = 'Награды больницы'
+        
+        
+        
+        
 
+
+"""
